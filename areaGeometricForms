@@ -1,0 +1,55 @@
+using System;
+using System.Globalization;
+
+namespace ExercicioProposto6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double a,
+                    b,
+                    c,
+                    pi = 3.14159,
+                    areaTriangulo,
+                    areaCirculo,
+                    areaTrapezio,
+                    areaQuadrado,
+                    areaRetangulo;
+
+            Console.WriteLine("Insira trez valores:");
+            a = double.Parse(Console.ReadLine());
+            b = double.Parse(Console.ReadLine());
+            c = double.Parse(Console.ReadLine());
+
+            //area do triangulo
+            // a) a área do triângulo retângulo que tem A por base e C por altura.
+            // area = base * altura / 2
+            areaTriangulo = a * c / 2;            
+            Console.WriteLine("Triangulo: " + areaTriangulo.ToString("F3",CultureInfo.InvariantCulture));
+
+            //area do circulo
+            // b) a área do círculo de raio C. (pi = 3.14159)
+            // Fórmula da área: area = π . raio2 (pi = 3.14159)
+            areaCirculo = pi * Math.Pow(c, 2.0);
+            Console.WriteLine("Circulo: " + areaCirculo.ToString("F3", CultureInfo.InvariantCulture));
+
+            // area do trapézio
+            // c) a área do trapézio que tem A e B por bases e C por altura.
+            // area = ((base maior + base menor ) / 2 ) * altura
+            areaTrapezio = ((a + b) / 2) * c;
+            Console.WriteLine("Trapezio: " + areaTrapezio.ToString("f3",CultureInfo.InvariantCulture));
+
+            // area do quadrado
+            //d) a área do quadrado que tem lado B. 
+            areaQuadrado = Math.Pow(b,2.0);
+            Console.WriteLine("Quadrado: "+ areaQuadrado.ToString("f3",CultureInfo.InvariantCulture));
+
+            // area do retangulo
+            // e) a área do retângulo que tem lados A e B.
+            areaRetangulo = a * b;
+            Console.WriteLine("Retangulo: " + areaRetangulo.ToString("f3", CultureInfo.InvariantCulture));
+
+        }
+    }
+}
