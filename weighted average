@@ -1,0 +1,52 @@
+using System;
+using System.Globalization;
+
+namespace exercicioProposto4._3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            /* Leia 1 valor inteiro N, que representa o número de casos de teste que vem a seguir. Cada caso de teste consiste 
+            de 3 valores reais, cada um deles com uma casa decimal. Apresente a média ponderada para cada um destes 
+            conjuntos de 3 valores, sendo que o primeiro valor tem peso 2, o segundo valor tem peso 3 e o terceiro valor tem 
+            peso 5  
+
+            Mp: Média aritmética ponderada
+            p1, p2,..., pn: pesos
+            x1, x2,...,xn: valores dos dados
+            
+            mp = p1*x1 + p2*x2 ... / p1 + p2
+
+            */
+
+            int n = 0;
+            string[] vet;
+
+            Console.WriteLine("How many cases would you like to do ?");
+            n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Please enter the Thre(3) Assigned Weights in a row: ");
+            double Weights1 = double.Parse(Console.ReadLine());
+            double Weights2 = double.Parse(Console.ReadLine());
+            double Weights3 = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Please enter with Data Point Value (3)Three numbers with (1)space between each number !");
+
+            for (int i =1; i <= n; i++) {
+                vet = Console.ReadLine().Split(' ');
+                // Assigned Weight = 2
+                double a = double.Parse(vet[0],CultureInfo.InvariantCulture);
+                // Assigned Weight = 3
+                double b = double.Parse(vet[1],CultureInfo.InvariantCulture);
+                // Assigned Weight = 5
+                double c = double.Parse(vet[2],CultureInfo.InvariantCulture);
+
+                // weighted average 
+                double mp = (a * Weights1 + b * Weights2 + c * Weights3) / (Weights1 + Weights2 + Weights3);
+               
+                Console.WriteLine("Weighted average : " + mp.ToString("f1",CultureInfo.InvariantCulture));
+            }
+
+        }
+    }
+}
